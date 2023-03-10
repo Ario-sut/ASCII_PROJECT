@@ -1,0 +1,48 @@
+import cv2
+import numpy as np
+import sys
+
+symbols_list = ["#", '-', '.', '*', '+', 'o', '$', '@', '<', ">"]
+thresholding_list = [0, 50, 100, 150, 200]
+
+
+#this function is to print out the ASCII art
+def print_out_ascii(array):
+    for row in array:
+        for i in row:
+            # choosing symbol based on the code
+            print(symbols_list[int(i) % len(symbols_list)], end="")
+        print()
+
+#this function convert an image to ascii format
+def image_to_ascii(image):
+    #mengubah ukuran parameter dan menyesuaikan parameter jika output tidak sesuai dngn layar
+    height, width = image.shape
+    new_width =int(width/15)
+    new_height = int(height/20)
+
+    #Mengubah ukuran gambar agar sesuai layar
+    resize_image = cv2.resize(image, (new_width, new_height),)
+    tresh_image = np.zeros(resize_image.shape)
+
+    for i, threshold in enumerate(thresholding_list):
+        tresh_image[resize_image > threshold] =i
+
+    return tresh_image
+
+if __name__ == "__main__":
+    #jalur gambar default
+    if len(sys.argv) < 2:
+        print("Image Path not specified : Using halipdev.png\n")
+        image_path = "image_path/paypal.png"
+
+    #jalur gambar yang diatur
+    if len(sys.argv) == 2:
+        print("Using {} as image Path\n".format(sys.argv[1]))
+        image_path = sys.argv[1]
+    #Membaca gambar
+    image = cv2.imread(image_path, 0)
+
+
+ascii_art = image_to_ascii(image)
+print_out_ascii(ascii_art)
