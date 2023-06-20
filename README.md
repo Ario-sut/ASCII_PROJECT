@@ -26,7 +26,7 @@ Before running the script, make sure you have the following packages installed:
 
 
 ```shell
-pip install opencv-python numpy
+pip install opencv-python
 
 ```shell
-pip install opencv-python numpy
+pip install numpy
