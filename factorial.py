@@ -11,6 +11,6 @@ def factorial(n):
             result *= i
         return result
 
-num = int(input("Masukkan angka untuk menghitung faktorialnya: "))
+num = int(input("Masukkan angka untuk menghitung faktorial: "))
 factorial_result = factorial(num)
 print("Faktorial dari {} adalah: {}".format(num, factorial_result))
