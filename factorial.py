@@ -11,4 +11,4 @@ def factorial(n):
             result *= i
         return result
     
-print("Faktorial dari 5 adalah:", factorial(5))  # Contoh penggunaan
+print("Faktorial dari 3 adalah:", factorial(3))  # Contoh penggunaan
