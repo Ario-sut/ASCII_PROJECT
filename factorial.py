@@ -11,6 +11,6 @@ def factorial(n):
             result *= i
         return result
 
-num = int(input("Masukkanlah angka untuk menghitung faktorialnya: "))
-factorial_result = factorial(num)
-print("Faktorial dari {} adalah: {}".format(num, factorial_result))
+num = int(input("Masukkan angka untuk menghitung faktorial: "))
+factorial_result = factorial(num)     
+print("Faktorial dari 5 adalah:", factorial(5))  # Contoh penggunaan
