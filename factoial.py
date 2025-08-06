@@ -6,4 +6,5 @@ for i in range(1, num + 1):
     else:
         factorial *= i
 
+
 print("The factorial of {} is {}".format(num, factorial))
